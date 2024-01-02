@@ -10,10 +10,7 @@ Ce projet est basé sur le framework Symfony et utilise Docker pour la gestion d
 ## Installation
 
 1. **Build de l'image Docker PHP8 :**
-   Naviguez vers le répertoire `docker/php8` et exécutez la commande suivante :
    ```bash
-   cd docker/php8
-   docker-compose build --no-cache
    docker compose up -d
    ```
     A la racine 
