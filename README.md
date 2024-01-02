@@ -13,10 +13,6 @@ Ce projet est basé sur le framework Symfony et utilise Docker pour la gestion d
    ```bash
    docker compose up -d
    ```
-    A la racine 
-    ```bash
-   docker compose up -d
-   ```
 
 2. **Exécuter le script .sh :**
 ```bash
