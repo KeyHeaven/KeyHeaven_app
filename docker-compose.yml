@@ -1,40 +1,33 @@
 version: '3.7'
 services:
-  php8keyheaven:
-    container_name: php8keyheaven
-    build: ../KeyHeaven_app/docker/php8
+  php8:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
     ports:
-      - "8000:8000"
+      - "8000:80"
     volumes:
-      - ./project/:/opt/symfo
-    depends_on:
-      - database
-
-  mailer:
-    image: schickling/mailcatcher
-    ports: [1025, 1080]
+      - ./:/var/www
+    environment:
+      DATABASE_URL: mysql://root:symfony@database/keyheaven?serverVersion=8
 
   database:
-    platform: linux/amd64
-    image: mysql:5.7
-    command: --default-authentication-plugin=mysql_native_password
-    restart: always
+    image: mysql:8
     environment:
       MYSQL_DATABASE: keyheaven
       MYSQL_USER: keyheaven
       MYSQL_PASSWORD: symfony
       MYSQL_ROOT_PASSWORD: symfony
     volumes:
-      - ./data:/var/lib/mysql
+      - db-data:/var/lib/mysql
     ports:
-      - "3306:3306"
+      - "33060:3306"
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    restart: always
     environment:
       PMA_HOST: database
-      MYSQL_ROOT_PASSWORD: spote
+      MYSQL_ROOT_PASSWORD: keyheaven
     ports:
       - "8080:80"
 
