@@ -51,6 +51,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Review::class)]
     private Collection $reviews;
 
+    #[ORM\ManyToOne(inversedBy: 'user')]
+    private ?UserInformation $userInformation = null;
+
     public function __construct()
     {
         $this->supportTickets = new ArrayCollection();
@@ -262,6 +265,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $review->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUserInformation(): ?UserInformation
+    {
+        return $this->userInformation;
+    }
+
+    public function setUserInformation(?UserInformation $userInformation): static
+    {
+        $this->userInformation = $userInformation;
 
         return $this;
     }

@@ -37,11 +37,15 @@ class Game
     #[ORM\OneToMany(mappedBy: 'game', targetEntity: Review::class)]
     private Collection $reviews;
 
+    #[ORM\OneToMany(mappedBy: 'game', targetEntity: ActivationCode::class)]
+    private Collection $activationCodes;
+
     public function __construct()
     {
         $this->Category = new ArrayCollection();
         $this->platform = new ArrayCollection();
         $this->reviews = new ArrayCollection();
+        $this->activationCodes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -169,6 +173,36 @@ class Game
             // set the owning side to null (unless already changed)
             if ($review->getGame() === $this) {
                 $review->setGame(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ActivationCode>
+     */
+    public function getActivationCodes(): Collection
+    {
+        return $this->activationCodes;
+    }
+
+    public function addActivationCode(ActivationCode $activationCode): static
+    {
+        if (!$this->activationCodes->contains($activationCode)) {
+            $this->activationCodes->add($activationCode);
+            $activationCode->setGame($this);
+        }
+
+        return $this;
+    }
+
+    public function removeActivationCode(ActivationCode $activationCode): static
+    {
+        if ($this->activationCodes->removeElement($activationCode)) {
+            // set the owning side to null (unless already changed)
+            if ($activationCode->getGame() === $this) {
+                $activationCode->setGame(null);
             }
         }
 
