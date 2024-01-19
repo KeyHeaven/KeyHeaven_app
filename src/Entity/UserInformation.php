@@ -18,11 +18,8 @@ class UserInformation
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\OneToMany(mappedBy: 'userInformation', targetEntity: User::class)]
-    private Collection $user;
-
     #[ORM\Column(type: Types::TEXT)]
-    private ?string $adress = null;
+    private ?string $address = null;
 
     #[ORM\Column(length: 255)]
     private ?string $city = null;
@@ -30,54 +27,24 @@ class UserInformation
     #[ORM\Column(length: 255)]
     private ?string $department = null;
 
-    public function __construct()
-    {
-        $this->user = new ArrayCollection();
-    }
+    #[ORM\ManyToOne(inversedBy: 'userInformation')]
+    private ?User $user = null;
+
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * @return Collection<int, User>
-     */
-    public function getUser(): Collection
-    {
-        return $this->user;
-    }
-
-    public function addUser(User $user): static
-    {
-        if (!$this->user->contains($user)) {
-            $this->user->add($user);
-            $user->setUserInformation($this);
-        }
-
-        return $this;
-    }
-
-    public function removeUser(User $user): static
-    {
-        if ($this->user->removeElement($user)) {
-            // set the owning side to null (unless already changed)
-            if ($user->getUserInformation() === $this) {
-                $user->setUserInformation(null);
-            }
-        }
-
-        return $this;
-    }
 
     public function getAdress(): ?string
     {
-        return $this->adress;
+        return $this->address;
     }
 
-    public function setAdress(string $adress): static
+    public function setAdress(string $address): static
     {
-        $this->adress = $adress;
+        $this->address = $address;
 
         return $this;
     }
@@ -102,6 +69,18 @@ class UserInformation
     public function setDepartment(string $department): static
     {
         $this->department = $department;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
 
         return $this;
     }

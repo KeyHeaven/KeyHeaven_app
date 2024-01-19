@@ -42,6 +42,18 @@ class Game
     #[ORM\OneToMany(mappedBy: 'game', targetEntity: ActivationCode::class)]
     private Collection $activationCodes;
 
+    #[ORM\Column(length: 255)]
+    private ?string $image = null;
+
+    #[ORM\ManyToOne(inversedBy: 'games')]
+    private ?Developers $developer = null;
+
+    #[ORM\ManyToOne(inversedBy: 'games')]
+    private ?Editor $Editor = null;
+
+    #[ORM\ManyToOne(inversedBy: 'games')]
+    private ?Configuration $Configuration = null;
+
     public function __construct()
     {
         $this->Category = new ArrayCollection();
@@ -207,6 +219,54 @@ class Game
                 $activationCode->setGame(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): static
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    public function getDeveloper(): ?Developers
+    {
+        return $this->developer;
+    }
+
+    public function setDeveloper(?Developers $developer): static
+    {
+        $this->developer = $developer;
+
+        return $this;
+    }
+
+    public function getEditor(): ?Editor
+    {
+        return $this->Editor;
+    }
+
+    public function setEditor(?Editor $Editor): static
+    {
+        $this->Editor = $Editor;
+
+        return $this;
+    }
+
+    public function getConfiguration(): ?Configuration
+    {
+        return $this->Configuration;
+    }
+
+    public function setConfiguration(?Configuration $Configuration): static
+    {
+        $this->Configuration = $Configuration;
 
         return $this;
     }
