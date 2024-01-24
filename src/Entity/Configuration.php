@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: ConfigurationRepository::class)]
 #[ApiResource]
@@ -19,27 +20,35 @@ class Configuration
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups('get')]
     private ?string $operatingSystem = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups('get')]
     private ?string $processor = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups('get')]
     private ?string $graphicsCard = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups('get')]
     private ?string $ramMemory = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups('get')]
     private ?string $storage = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups('get')]
     private ?string $directX = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Groups('get')]
     private ?string $additionalNotes = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups('get')]
     private ?string $Display = null;
 
     #[ORM\OneToMany(mappedBy: 'Configuration', targetEntity: Game::class)]
