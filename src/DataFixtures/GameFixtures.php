@@ -77,7 +77,7 @@ class GameFixtures extends Fixture
                 ->addPlatform($this->platformRepository->findOneBy(['id' => 3]))
                 ->setDeveloper($this->developersRepository->findOneBy(['id' => 1]))
                 ->setConfiguration($this->configurationRepository->findOneBy(['id' => 1]))
-                ->setEditor($this->editorRepository->findOneBy(['id' => 50]));
+                ->setEditor($this->editorRepository->findOneBy(['id' => 5]));
             $manager->persist($game);
         }
         $manager->flush();
