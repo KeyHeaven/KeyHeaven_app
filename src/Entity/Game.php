@@ -3,12 +3,16 @@
 namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
 use App\Repository\GameRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
+#[ApiResource(normalizationContext: ['groups' => ['get']])]
+#[Get]
 #[ORM\Entity(repositoryClass: GameRepository::class)]
 #[ApiResource]
 class Game
@@ -19,28 +23,52 @@ class Game
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups('get')]
     private ?string $title = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Groups('get')]
     private ?string $description = null;
 
     #[ORM\Column]
+    #[Groups('get')]
     private ?float $price = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Groups('get')]
     private ?\DateTimeInterface $exitDate = null;
 
     #[ORM\ManyToMany(targetEntity: Category::class, inversedBy: 'games')]
+    #[Groups('get')]
     private Collection $Category;
 
     #[ORM\ManyToMany(targetEntity: Platform::class, inversedBy: 'games')]
+    #[Groups('get')]
     private Collection $platform;
 
     #[ORM\OneToMany(mappedBy: 'game', targetEntity: Review::class)]
+    #[Groups('get')]
     private Collection $reviews;
 
     #[ORM\OneToMany(mappedBy: 'game', targetEntity: ActivationCode::class)]
+    #[Groups('get')]
     private Collection $activationCodes;
+
+    #[ORM\Column(length: 255)]
+    #[Groups('get')]
+    private ?string $image = null;
+
+    #[ORM\ManyToOne(inversedBy: 'games')]
+    #[Groups('get')]
+    private ?Developers $developer = null;
+
+    #[ORM\ManyToOne(inversedBy: 'games')]
+    #[Groups('get')]
+    private ?Editor $Editor = null;
+
+    #[ORM\ManyToOne(inversedBy: 'games')]
+    #[Groups('get')]
+    private ?Configuration $Configuration = null;
 
     public function __construct()
     {
@@ -207,6 +235,54 @@ class Game
                 $activationCode->setGame(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): static
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    public function getDeveloper(): ?Developers
+    {
+        return $this->developer;
+    }
+
+    public function setDeveloper(?Developers $developer): static
+    {
+        $this->developer = $developer;
+
+        return $this;
+    }
+
+    public function getEditor(): ?Editor
+    {
+        return $this->Editor;
+    }
+
+    public function setEditor(?Editor $Editor): static
+    {
+        $this->Editor = $Editor;
+
+        return $this;
+    }
+
+    public function getConfiguration(): ?Configuration
+    {
+        return $this->Configuration;
+    }
+
+    public function setConfiguration(?Configuration $Configuration): static
+    {
+        $this->Configuration = $Configuration;
 
         return $this;
     }

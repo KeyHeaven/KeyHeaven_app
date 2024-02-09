@@ -3,15 +3,15 @@
 namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
-use App\Repository\PlatformRepository;
+use App\Repository\EditorRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
-#[ORM\Entity(repositoryClass: PlatformRepository::class)]
+#[ORM\Entity(repositoryClass: EditorRepository::class)]
 #[ApiResource]
-class Platform
+class Editor
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -20,9 +20,9 @@ class Platform
 
     #[ORM\Column(length: 255)]
     #[Groups('get')]
-    private ?string $platformName = null;
+    private ?string $name = null;
 
-    #[ORM\ManyToMany(targetEntity: Game::class, mappedBy: 'platform')]
+    #[ORM\OneToMany(mappedBy: 'Editor', targetEntity: Game::class)]
     private Collection $games;
 
     public function __construct()
@@ -35,14 +35,14 @@ class Platform
         return $this->id;
     }
 
-    public function getPlatformName(): ?string
+    public function getName(): ?string
     {
-        return $this->platformName;
+        return $this->name;
     }
 
-    public function setPlatformName(string $platformName): static
+    public function setName(string $name): static
     {
-        $this->platformName = $platformName;
+        $this->name = $name;
 
         return $this;
     }
@@ -59,7 +59,7 @@ class Platform
     {
         if (!$this->games->contains($game)) {
             $this->games->add($game);
-            $game->addPlatform($this);
+            $game->setEditor($this);
         }
 
         return $this;
@@ -68,7 +68,10 @@ class Platform
     public function removeGame(Game $game): static
     {
         if ($this->games->removeElement($game)) {
-            $game->removePlatform($this);
+            // set the owning side to null (unless already changed)
+            if ($game->getEditor() === $this) {
+                $game->setEditor(null);
+            }
         }
 
         return $this;

@@ -53,14 +53,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Review::class)]
     private Collection $reviews;
 
-    #[ORM\ManyToOne(inversedBy: 'user')]
-    private ?UserInformation $userInformation = null;
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: UserInformation::class)]
+    private Collection $userInformation;
 
     public function __construct()
     {
         $this->supportTickets = new ArrayCollection();
         $this->purchasings = new ArrayCollection();
         $this->reviews = new ArrayCollection();
+        $this->userInformation = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -279,6 +280,28 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setUserInformation(?UserInformation $userInformation): static
     {
         $this->userInformation = $userInformation;
+
+        return $this;
+    }
+
+    public function addUserInformation(UserInformation $userInformation): static
+    {
+        if (!$this->userInformation->contains($userInformation)) {
+            $this->userInformation->add($userInformation);
+            $userInformation->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUserInformation(UserInformation $userInformation): static
+    {
+        if ($this->userInformation->removeElement($userInformation)) {
+            // set the owning side to null (unless already changed)
+            if ($userInformation->getUser() === $this) {
+                $userInformation->setUser(null);
+            }
+        }
 
         return $this;
     }
