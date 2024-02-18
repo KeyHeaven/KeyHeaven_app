@@ -28,6 +28,9 @@ class ActivationCode
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $duration = null;
 
+    #[ORM\Column(type: Types::BOOLEAN)]
+    private ?bool $isAvailable = true; 
+
     #[ORM\ManyToOne(inversedBy: 'activationCodes')]
     private ?Game $game = null;
 
@@ -94,5 +97,17 @@ class ActivationCode
         $this->game = $game;
 
         return $this;
+    }
+
+    public function isAvailable(): ?bool
+    {
+    return $this->isAvailable;
+    }
+
+    public function setIsAvailable(bool $isAvailable): self
+    {
+    $this->isAvailable = $isAvailable;
+
+    return $this;
     }
 }
