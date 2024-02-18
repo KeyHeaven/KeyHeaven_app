@@ -40,6 +40,7 @@ class SecurityController  extends AbstractController
         }
         $token = $encoder->encode([
             'email' => $user->getEmail(),
+            'username' => $user->getEmail(),
             'exp' => time() + 14000 // Expiration en une heure
         ]);
 
