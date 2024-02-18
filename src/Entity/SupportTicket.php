@@ -28,6 +28,10 @@ class SupportTicket
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $file = null;
 
+    #[ORM\ManyToOne(targetEntity: PurchaseDetail::class)]
+    #[ORM\JoinColumn(name: "purchase_detail_id", referencedColumnName: "id", nullable: true)]
+    private ?PurchaseDetail $purchaseDetail = null;
+
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $closeDate = null;
 
@@ -75,6 +79,16 @@ class SupportTicket
         return $this;
     }
 
+    public function getPurchaseDetail(): ?PurchaseDetail
+    {
+        return $this->purchaseDetail;
+    }
+
+    public function setPurchaseDetail(?PurchaseDetail $purchaseDetail): self
+    {
+        $this->purchaseDetail = $purchaseDetail;
+        return $this;
+    }
     public function getFile(): ?string
     {
         return $this->file;
