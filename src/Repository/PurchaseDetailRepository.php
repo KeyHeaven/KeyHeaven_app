@@ -21,6 +21,16 @@ class PurchaseDetailRepository extends ServiceEntityRepository
         parent::__construct($registry, PurchaseDetail::class);
     }
 
+    public function findByPurchaseId($purchaseId)
+    {
+        $qb = $this->createQueryBuilder('pd')
+            ->innerJoin('pd.purchase', 'p')
+            ->where('p.id = :purchaseId')
+            ->setParameter('purchaseId', $purchaseId);
+
+        return $qb->getQuery()->getResult();
+    }
+
 //    /**
 //     * @return PurchaseDetail[] Returns an array of PurchaseDetail objects
 //     */
