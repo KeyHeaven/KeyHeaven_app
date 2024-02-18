@@ -5,7 +5,10 @@ namespace App\Entity;
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\PurchaseDetailRepository;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
+use ApiPlatform\Metadata\ApiFilter;
 
+#[ApiFilter(SearchFilter::class, properties : ['purchase' => 'exact'])]
 #[ORM\Entity(repositoryClass: PurchaseDetailRepository::class)]
 #[ApiResource]
 class PurchaseDetail
@@ -25,11 +28,11 @@ class PurchaseDetail
     #[ORM\JoinColumn(nullable: false)]
     private ?Purchasing $purchase = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    #[ORM\ManyToOne(cascade: ['persist', 'remove'])]
     private ?Game $game = null;
 
     #[ORM\OneToOne(cascade: ['persist', 'remove'])]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     private ?ActivationCode $activationCode = null;
 
     public function getId(): ?int
