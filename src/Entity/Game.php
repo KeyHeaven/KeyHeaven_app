@@ -10,7 +10,12 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
+use ApiPlatform\Metadata\ApiFilter;
+use ApiPlatform\Doctrine\Orm\Filter\OrderFilter;
 
+#[ApiFilter(SearchFilter::class, properties : ['title' => 'ipartial'])]
+#[ApiFilter(OrderFilter::class, properties: ['exitDate' => 'DESC'])]
 #[ApiResource(normalizationContext: ['groups' => ['get']])]
 #[Get]
 #[ORM\Entity(repositoryClass: GameRepository::class)]
