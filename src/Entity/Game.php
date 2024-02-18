@@ -291,4 +291,15 @@ class Game
 
         return $this;
     }
+
+    public function isInStock(): bool
+{
+    foreach ($this->getActivationCodes() as $activationCode) {
+        if ($activationCode->isAvailable()) {
+            return true;
+        }
+    }
+
+    return false;
+}
 }
