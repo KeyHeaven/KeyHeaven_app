@@ -11,11 +11,14 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         login:
-            pattern: ^/api/v1/login
+            pattern: ^/api/login
             stateless: true
 
         register:
-            pattern: ^/api/v1/register
+            pattern: ^/api/register  
+            stateless: true
+        change_password:
+            pattern: ^/api/change-password
             stateless: true
         api:
             pattern: ^/api
@@ -27,4 +30,5 @@ security:
     access_control:
         - { path: ^/api/login, roles: PUBLIC_ACCESS }
         - { path: ^/api/register, roles: PUBLIC_ACCESS }
-        - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/api/change-password, roles: PUBLIC_ACCESS }
+        - { path: ^/api, roles: PUBLIC_ACCESS }

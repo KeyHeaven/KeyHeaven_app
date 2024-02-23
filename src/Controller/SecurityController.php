@@ -12,19 +12,22 @@ use App\Repository\UserRepository;
 use Symfony\Component\Security\Core\Exception\BadCredentialsException;
 use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
+use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface;
 
 class SecurityController  extends AbstractController
 {
     private UserRepository $userRepository;
     private UserPasswordHasherInterface $passwordEncoder;
     private EntityManagerInterface $entityManager;
+     private $jwtManager;
 
     private $stripeService;
-    public function __construct(UserRepository $userRepository, UserPasswordHasherInterface $passwordEncoder, EntityManagerInterface $entityManager)
+    public function __construct(UserRepository $userRepository, UserPasswordHasherInterface $passwordEncoder, EntityManagerInterface $entityManager, JWTTokenManagerInterface $jwtManager)
     {
         $this->userRepository = $userRepository;
         $this->passwordEncoder = $passwordEncoder;
         $this->entityManager = $entityManager;
+        $this->jwtManager = $jwtManager;
     }
 
     #[Route('/api/login', name: 'user_login', methods: ['POST'])]
@@ -38,11 +41,7 @@ class SecurityController  extends AbstractController
         if (!$user || !$this->passwordEncoder->isPasswordValid($user, $password)) {
             throw new BadCredentialsException('Invalid email or password');
         }
-        $token = $encoder->encode([
-            'email' => $user->getEmail(),
-            'username' => $user->getEmail(),
-            'exp' => time() + 14000 // Expiration en une heure
-        ]);
+        $token = $this->jwtManager->create($user);
 
         return $this->json(['token' => $token, 'message' => 'User login successful!']);
     }
@@ -61,10 +60,7 @@ class SecurityController  extends AbstractController
             $user->setRoles(['ROLE_USER']);
             $this->entityManager->persist($user);
             $this->entityManager->flush();
-            $token = $encoder->encode([
-                'email' => $user->getEmail(),
-                'exp' => time() + 14000 // Expiration en une heure
-            ]);
+            $token = $this->jwtManager->create($user);
 
             return $this->json(['token' => $token, 'message' => 'User created successful!']);
         } catch (\Exception $e) {
@@ -73,5 +69,26 @@ class SecurityController  extends AbstractController
             }
             return $this->json(['message' => $e->getMessage()], 409);
         }
+    }
+
+    #[Route('/api/change-password', name: 'user_change_password', methods: ['POST'])]
+    public function changePassword(Request $request): Response
+    {
+        $data = json_decode($request->getContent(), true);
+        $email = $data['email'];
+        $oldPassword = $data['old_password'];
+        $newPassword = $data['new_password'];
+
+        $user = $this->userRepository->findOneBy(['email' => $email]);
+
+        if (!$user || !$this->passwordEncoder->isPasswordValid($user, $oldPassword)) {
+            throw new BadCredentialsException('Invalid email or password');
+        }
+
+        $user->setPassword($this->passwordEncoder->hashPassword($user, $newPassword));
+
+        $this->entityManager->flush();
+
+        return $this->json(['message' => 'Password updated successfully!']);
     }
 }
