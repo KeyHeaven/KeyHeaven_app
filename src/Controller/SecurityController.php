@@ -41,7 +41,13 @@ class SecurityController  extends AbstractController
         if (!$user || !$this->passwordEncoder->isPasswordValid($user, $password)) {
             throw new BadCredentialsException('Invalid email or password');
         }
-        $token = $this->jwtManager->create($user);
+        $token = $encoder->encode([
+            'id' => $user->getId(),
+            'email' => $user->getEmail(),
+            'username' => $user->getEmail(),
+            'stripeId' => $user->getStripeId(),
+            'exp' => time() + 28000 
+        ]);
 
         return $this->json(['token' => $token, 'message' => 'User login successful!']);
     }
@@ -60,7 +66,13 @@ class SecurityController  extends AbstractController
             $user->setRoles(['ROLE_USER']);
             $this->entityManager->persist($user);
             $this->entityManager->flush();
-            $token = $this->jwtManager->create($user);
+            $token = $encoder->encode([
+            'id' => $user->getId(),
+            'email' => $user->getEmail(),
+            'username' => $user->getEmail(),
+            'stripeId' => $user->getStripeId(),
+            'exp' => time() + 28000 
+        ]);
 
             return $this->json(['token' => $token, 'message' => 'User created successful!']);
         } catch (\Exception $e) {
