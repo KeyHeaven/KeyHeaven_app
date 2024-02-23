@@ -33,18 +33,7 @@ class PaymentController extends AbstractController
         $this->tokenStorage = $tokenStorage;
     }
 
-    #[Route('/api/test', name: 'app_test', methods: ['GET'])]
-    public function test(): JsonResponse
-    {
-        $user = $this->getUser(); 
-    if (!$user) {
-        return $this->json(['message' => 'Utilisateur non authentifié'], 403);
-    }
-
-    return $this->json(['message' => 'Événement créé avec succès', 'userId' => $user->getId()]);
-    }
-
-    #[Route('/create-payment-intent', name: 'app_create_payment_intent', methods: ['POST'])]
+    #[Route('/api/create-payment-intent', name: 'app_create_payment_intent', methods: ['POST'])]
     public function createPaymentIntent(Request $request): JsonResponse
     {
         $user = $this->getUser();
@@ -83,7 +72,7 @@ class PaymentController extends AbstractController
         }
     }
 
-    #[Route('/payment-success', name: 'app_payment_success', methods: ['POST'])]
+    #[Route('/api/payment-success', name: 'app_payment_success', methods: ['POST'])]
     public function handlePaymentSuccess(Request $request): JsonResponse
     {
         $data = json_decode($request->getContent(), true);
@@ -116,6 +105,27 @@ class PaymentController extends AbstractController
             } else {
                 return $this->json(['error' => 'PaymentIntent not succeeded.'], 400);
             }
+        } catch (\Exception $e) {
+            return $this->json(['error' => $e->getMessage()], 400);
+        }
+    }
+
+    // create stripe customer
+    #[Route('/api/create-stripe-customer', name: 'app_create_stripe_customer', methods: ['POST'])]
+    public function createStripeCustomer(Request $request): JsonResponse
+    {
+        $user = $this->getUser();
+        $data = json_decode($request->getContent(), true);
+        try {
+            $customer = Customer::create([
+                'email' => $user->getEmail(),
+            ]);
+
+            $user->setStripeId($customer->id);
+            $this->entityManager->persist($user);
+            $this->entityManager->flush();
+
+            return $this->json(['success' => true, 'message' => 'Stripe customer created successfully.', 'stripeId' => $customer->id]);
         } catch (\Exception $e) {
             return $this->json(['error' => $e->getMessage()], 400);
         }
