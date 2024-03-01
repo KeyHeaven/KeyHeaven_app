@@ -20,6 +20,7 @@ use App\DataFixtures\PlatformFixtures;
 use App\DataFixtures\EditorFixtures;
 use App\DataFixtures\DeveloperFixtures;
 use DateTime;
+use App\Entity\ActivationCode;
 class GameFixtures extends Fixture implements DependentFixtureInterface
 {
     private  CategoryRepository $categoryRepository;
@@ -49,7 +50,7 @@ class GameFixtures extends Fixture implements DependentFixtureInterface
     {
         $jsonFile = __DIR__ . '/games.json';
         $gamesData = json_decode(file_get_contents($jsonFile), true);
-
+        $counter = 1;
         foreach ($gamesData as $gameData) {
             $price = (float) str_replace('€', '', $gameData['price']);
             $configuration = new Configuration();
@@ -72,12 +73,34 @@ class GameFixtures extends Fixture implements DependentFixtureInterface
                 ->setDeveloper($this->developersRepository->findOneBy(['name' => $gameData['developer']]) ?? new Developers())
                 ->setEditor($this->editorRepository->findOneBy(['name' => $gameData['publisher']]) ?? new Editor())
                 ->setConfiguration($configuration);
-            
 
+            if ($counter % 2 == 0) {
+                $numberOfCodes = 10;
+
+            for ($i = 0; $i < $numberOfCodes; $i++) {
+            $code = $this->generatectivationCode();
+            $activationCode = new ActivationCode();
+            $activationCode->setName('Code #' . $counter)
+                ->setCode($code)
+                ->setIsAvailable(true)
+                ->setGame($game);
+
+            $manager->persist($activationCode);
+            }
+        }
             $manager->persist($game);
+            $counter++;
         }
 
         $manager->flush();
     }
+private function generatectivationCode(): string
+{
+    $segments = [];
+    for ($i = 0; $i < 5; $i++) {
+        $segments[] = substr(str_shuffle(str_repeat('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', 5)), 0, 5);
+    }
 
+    return implode('-', $segments);
+}
 }
