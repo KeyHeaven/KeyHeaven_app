@@ -291,7 +291,7 @@ class Game
 
         return $this;
     }
-
+    #[Groups('get')]
     public function isInStock(): bool
 {
     foreach ($this->getActivationCodes() as $activationCode) {
