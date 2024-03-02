@@ -15,18 +15,21 @@ jobs:
 
       - name: Install dependencies
         run: docker compose exec -T php8 composer install
+      
+      - name: Create database for tests
+        run: docker compose exec -T php8 php bin/console doctrine:database:create --env=test
 
       - name: Create migrations for tests
-        run: docker compose exec -T php8 php bin/console make:migration
+        run: docker compose exec -T php8 php bin/console make:migration --env=test
 
       - name: Execute migrations for tests
-        run: docker compose exec -T php8 php bin/console doctrine:migrations:migrate
+        run: docker compose exec -T php8 php bin/console doctrine:migrations:migrate --env=test --no-interaction
 
       - name: Generate test data
-        run: docker compose exec -T php8 php bin/console doctrine:fixtures:load --no-interaction
+        run: docker compose exec -T php8 php bin/console doctrine:fixtures:load --no-interaction --env=test
 
       - name: Generate JWT keys
-        run: docker compose exec -T php8 php bin/console lexik:jwt:generate-keypair
+        run: docker compose exec -T php8 php bin/console lexik:jwt:generate-keypair --env=test
 
       - name: Run unit tests
         run: docker compose exec -T php8 php vendor/bin/phpunit --testdox
