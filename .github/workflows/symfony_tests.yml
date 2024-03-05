@@ -1,0 +1,40 @@
+name: Symfony PHPUnit Tests
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Start Docker Compose
+        run: docker compose up -d
+
+      - name: Install dependencies
+        run: docker compose exec -T php8 composer install
+      
+      - name: Create database for tests
+        run: docker compose exec -T php8 php bin/console doctrine:database:create --env=test
+
+      - name: Create migrations for tests
+        run: docker compose exec -T php8 php bin/console doctrine:migrations:diff --env=test
+
+      - name: Execute migrations for tests
+        run: docker compose exec -T php8 php bin/console doctrine:migrations:migrate --env=test --no-interaction
+
+      - name: Generate test data
+        run: docker compose exec -T php8 php bin/console doctrine:fixtures:load --no-interaction --env=test
+
+      - name: Generate JWT keys
+        run: docker compose exec -T php8 php bin/console lexik:jwt:generate-keypair --env=test
+
+      - name: Run unit tests
+        run: docker compose exec -T php8 php vendor/bin/phpunit --testdox
+
+      - name: Stop Docker Compose
+        run: docker compose down

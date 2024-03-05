@@ -10,7 +10,7 @@ services:
       - ./:/var/www
     environment:
       DATABASE_URL: mysql://root:symfony@database/keyheaven?serverVersion=8
-
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
   database:
     image: mysql:8
     environment:

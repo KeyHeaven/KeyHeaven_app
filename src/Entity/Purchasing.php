@@ -6,7 +6,10 @@ use ApiPlatform\Metadata\ApiResource;
 use App\Repository\PurchasingRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
+use ApiPlatform\Metadata\ApiFilter;
 
+#[ApiFilter(SearchFilter::class, properties: ['user' => 'exact'])]
 #[ORM\Entity(repositoryClass: PurchasingRepository::class)]
 #[ApiResource]
 class Purchasing
