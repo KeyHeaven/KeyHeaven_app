@@ -18,7 +18,7 @@ class UserFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 1; $i <= 25; $i++) {
             $user = new User();
             $user->setEmail('user' . $i . '@example.com')
                 ->setRoles(['ROLE_USER'])
