@@ -8,6 +8,9 @@ RUN chmod +x /usr/local/bin/install-php-extensions && \
     install-php-extensions intl pdo_mysql && \
     apt update && apt install -yqq zip
 
+RUN pecl install xdebug \
+    && docker-php-ext-enable xdebug
+
 # Install Node.js 18 and NPM
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get update && \

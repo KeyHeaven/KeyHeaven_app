@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/src</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="_css/bootstrap.min.css?v=10.1.14" rel="stylesheet" type="text/css">
+  <link href="_css/nv.d3.min.css?v=10.1.14" rel="stylesheet" type="text/css">
+  <link href="_css/style.css?v=10.1.14" rel="stylesheet" type="text/css">
+  <link href="_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="index.html">/var/www/src</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Controller/PaymentController.php.html#21">App\Controller\PaymentController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/GameFixtures.php.html#24">App\DataFixtures\GameFixtures</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/ActivationCode.php.html#10">App\Entity\ActivationCode</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Category.php.html#12">App\Entity\Category</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#13">App\Entity\Configuration</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/DiscountCode.php.html#10">App\Entity\DiscountCode</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#17">App\Entity\Game</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/PurchaseDetail.php.html#11">App\Entity\PurchaseDetail</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Purchasing.php.html#12">App\Entity\Purchasing</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Review.php.html#9">App\Entity\Review</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/SupportTicket.php.html#10">App\Entity\SupportTicket</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ActivationCodeRepository.php.html#17">App\Repository\ActivationCodeRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CategoryRepository.php.html#17">App\Repository\CategoryRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ConfigurationRepository.php.html#17">App\Repository\ConfigurationRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/DiscountCodeRepository.php.html#17">App\Repository\DiscountCodeRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/GameRepository.php.html#17">App\Repository\GameRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/PurchaseDetailRepository.php.html#17">App\Repository\PurchaseDetailRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/PurchasingRepository.php.html#17">App\Repository\PurchasingRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ReviewRepository.php.html#17">App\Repository\ReviewRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/SupportTicketRepository.php.html#17">App\Repository\SupportTicketRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserInformationRepository.php.html#17">App\Repository\UserInformationRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#22">App\Repository\UserRepository</a></td><td class="text-right">16%</td></tr>
+       <tr><td><a href="Entity/Developers.php.html#12">App\Entity\Developers</a></td><td class="text-right">21%</td></tr>
+       <tr><td><a href="Entity/Editor.php.html#12">App\Entity\Editor</a></td><td class="text-right">21%</td></tr>
+       <tr><td><a href="Entity/Platform.php.html#12">App\Entity\Platform</a></td><td class="text-right">23%</td></tr>
+       <tr><td><a href="Entity/User.php.html#14">App\Entity\User</a></td><td class="text-right">30%</td></tr>
+       <tr><td><a href="Entity/UserInformation.php.html#12">App\Entity\UserInformation</a></td><td class="text-right">61%</td></tr>
+       <tr><td><a href="Controller/SecurityController.php.html#17">App\Controller\SecurityController</a></td><td class="text-right">78%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Entity/Game.php.html#17">App\Entity\Game</a></td><td class="text-right">1722</td></tr>
+       <tr><td><a href="Entity/User.php.html#14">App\Entity\User</a></td><td class="text-right">710</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#13">App\Entity\Configuration</a></td><td class="text-right">600</td></tr>
+       <tr><td><a href="Controller/PaymentController.php.html#21">App\Controller\PaymentController</a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="Entity/Category.php.html#12">App\Entity\Category</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="DataFixtures/GameFixtures.php.html#24">App\DataFixtures\GameFixtures</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="Entity/Developers.php.html#12">App\Entity\Developers</a></td><td class="text-right">58</td></tr>
+       <tr><td><a href="Entity/Editor.php.html#12">App\Entity\Editor</a></td><td class="text-right">58</td></tr>
+       <tr><td><a href="Entity/Platform.php.html#12">App\Entity\Platform</a></td><td class="text-right">45</td></tr>
+       <tr><td><a href="Controller/SecurityController.php.html#17">App\Controller\SecurityController</a></td><td class="text-right">11</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#22">App\Repository\UserRepository</a></td><td class="text-right">8</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Controller/PaymentController.php.html#27"><abbr title="App\Controller\PaymentController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/PaymentController.php.html#36"><abbr title="App\Controller\PaymentController::createPaymentIntent">createPaymentIntent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/PaymentController.php.html#75"><abbr title="App\Controller\PaymentController::handlePaymentSuccess">handlePaymentSuccess</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/PaymentController.php.html#114"><abbr title="App\Controller\PaymentController::createStripeCustomer">createStripeCustomer</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/SecurityController.php.html#86"><abbr title="App\Controller\SecurityController::changePassword">changePassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/GameFixtures.php.html#32"><abbr title="App\DataFixtures\GameFixtures::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/GameFixtures.php.html#40"><abbr title="App\DataFixtures\GameFixtures::getDependencies">getDependencies</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/GameFixtures.php.html#49"><abbr title="App\DataFixtures\GameFixtures::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/GameFixtures.php.html#97"><abbr title="App\DataFixtures\GameFixtures::generatectivationCode">generatectivationCode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/ActivationCode.php.html#37"><abbr title="App\Entity\ActivationCode::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/ActivationCode.php.html#42"><abbr title="App\Entity\ActivationCode::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/ActivationCode.php.html#47"><abbr title="App\Entity\ActivationCode::setName">setName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/ActivationCode.php.html#54"><abbr title="App\Entity\ActivationCode::getCode">getCode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/ActivationCode.php.html#59"><abbr title="App\Entity\ActivationCode::setCode">setCode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/ActivationCode.php.html#66"><abbr title="App\Entity\ActivationCode::getDistributionDate">getDistributionDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/ActivationCode.php.html#71"><abbr title="App\Entity\ActivationCode::setDistributionDate">setDistributionDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/ActivationCode.php.html#78"><abbr title="App\Entity\ActivationCode::getDuration">getDuration</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/ActivationCode.php.html#83"><abbr title="App\Entity\ActivationCode::setDuration">setDuration</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/ActivationCode.php.html#90"><abbr title="App\Entity\ActivationCode::getGame">getGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/ActivationCode.php.html#95"><abbr title="App\Entity\ActivationCode::setGame">setGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/ActivationCode.php.html#102"><abbr title="App\Entity\ActivationCode::isAvailable">isAvailable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/ActivationCode.php.html#107"><abbr title="App\Entity\ActivationCode::setIsAvailable">setIsAvailable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Category.php.html#28"><abbr title="App\Entity\Category::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Category.php.html#33"><abbr title="App\Entity\Category::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Category.php.html#38"><abbr title="App\Entity\Category::getLabel">getLabel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Category.php.html#43"><abbr title="App\Entity\Category::setLabel">setLabel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Category.php.html#53"><abbr title="App\Entity\Category::getGames">getGames</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Category.php.html#58"><abbr title="App\Entity\Category::addGame">addGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Category.php.html#68"><abbr title="App\Entity\Category::removeGame">removeGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#57"><abbr title="App\Entity\Configuration::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#62"><abbr title="App\Entity\Configuration::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#67"><abbr title="App\Entity\Configuration::getOperatingSystem">getOperatingSystem</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#72"><abbr title="App\Entity\Configuration::setOperatingSystem">setOperatingSystem</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#79"><abbr title="App\Entity\Configuration::getProcessor">getProcessor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#84"><abbr title="App\Entity\Configuration::setProcessor">setProcessor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#91"><abbr title="App\Entity\Configuration::getGraphicsCard">getGraphicsCard</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#96"><abbr title="App\Entity\Configuration::setGraphicsCard">setGraphicsCard</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#103"><abbr title="App\Entity\Configuration::getRamMemory">getRamMemory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#108"><abbr title="App\Entity\Configuration::setRamMemory">setRamMemory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#115"><abbr title="App\Entity\Configuration::getStorage">getStorage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#120"><abbr title="App\Entity\Configuration::setStorage">setStorage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#127"><abbr title="App\Entity\Configuration::getDirectX">getDirectX</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#132"><abbr title="App\Entity\Configuration::setDirectX">setDirectX</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#139"><abbr title="App\Entity\Configuration::getAdditionalNotes">getAdditionalNotes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#144"><abbr title="App\Entity\Configuration::setAdditionalNotes">setAdditionalNotes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#151"><abbr title="App\Entity\Configuration::getDisplay">getDisplay</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#156"><abbr title="App\Entity\Configuration::setDisplay">setDisplay</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#166"><abbr title="App\Entity\Configuration::getGames">getGames</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#171"><abbr title="App\Entity\Configuration::addGame">addGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#181"><abbr title="App\Entity\Configuration::removeGame">removeGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Developers.php.html#33"><abbr title="App\Entity\Developers::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Developers.php.html#38"><abbr title="App\Entity\Developers::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Developers.php.html#53"><abbr title="App\Entity\Developers::getGames">getGames</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Developers.php.html#58"><abbr title="App\Entity\Developers::addGame">addGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Developers.php.html#68"><abbr title="App\Entity\Developers::removeGame">removeGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/DiscountCode.php.html#34"><abbr title="App\Entity\DiscountCode::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/DiscountCode.php.html#39"><abbr title="App\Entity\DiscountCode::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/DiscountCode.php.html#44"><abbr title="App\Entity\DiscountCode::setName">setName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/DiscountCode.php.html#51"><abbr title="App\Entity\DiscountCode::getCode">getCode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/DiscountCode.php.html#56"><abbr title="App\Entity\DiscountCode::setCode">setCode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/DiscountCode.php.html#63"><abbr title="App\Entity\DiscountCode::getReduction">getReduction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/DiscountCode.php.html#68"><abbr title="App\Entity\DiscountCode::setReduction">setReduction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/DiscountCode.php.html#75"><abbr title="App\Entity\DiscountCode::getStartDate">getStartDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/DiscountCode.php.html#80"><abbr title="App\Entity\DiscountCode::setStartDate">setStartDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/DiscountCode.php.html#87"><abbr title="App\Entity\DiscountCode::getEndDate">getEndDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/DiscountCode.php.html#92"><abbr title="App\Entity\DiscountCode::setEndDate">setEndDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Editor.php.html#33"><abbr title="App\Entity\Editor::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Editor.php.html#38"><abbr title="App\Entity\Editor::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Editor.php.html#53"><abbr title="App\Entity\Editor::getGames">getGames</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Editor.php.html#58"><abbr title="App\Entity\Editor::addGame">addGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Editor.php.html#68"><abbr title="App\Entity\Editor::removeGame">removeGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#78"><abbr title="App\Entity\Game::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#86"><abbr title="App\Entity\Game::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#91"><abbr title="App\Entity\Game::getTitle">getTitle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#96"><abbr title="App\Entity\Game::setTitle">setTitle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#103"><abbr title="App\Entity\Game::getDescription">getDescription</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#108"><abbr title="App\Entity\Game::setDescription">setDescription</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#115"><abbr title="App\Entity\Game::getPrice">getPrice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#120"><abbr title="App\Entity\Game::setPrice">setPrice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#127"><abbr title="App\Entity\Game::getExitDate">getExitDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#132"><abbr title="App\Entity\Game::setExitDate">setExitDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#142"><abbr title="App\Entity\Game::getCategory">getCategory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#147"><abbr title="App\Entity\Game::addCategory">addCategory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#156"><abbr title="App\Entity\Game::removeCategory">removeCategory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#166"><abbr title="App\Entity\Game::getPlatform">getPlatform</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#171"><abbr title="App\Entity\Game::addPlatform">addPlatform</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#180"><abbr title="App\Entity\Game::removePlatform">removePlatform</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#190"><abbr title="App\Entity\Game::getReviews">getReviews</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#195"><abbr title="App\Entity\Game::addReview">addReview</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#205"><abbr title="App\Entity\Game::removeReview">removeReview</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#220"><abbr title="App\Entity\Game::getActivationCodes">getActivationCodes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#225"><abbr title="App\Entity\Game::addActivationCode">addActivationCode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#235"><abbr title="App\Entity\Game::removeActivationCode">removeActivationCode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#247"><abbr title="App\Entity\Game::getImage">getImage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#252"><abbr title="App\Entity\Game::setImage">setImage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#259"><abbr title="App\Entity\Game::getDeveloper">getDeveloper</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#264"><abbr title="App\Entity\Game::setDeveloper">setDeveloper</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#271"><abbr title="App\Entity\Game::getEditor">getEditor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#276"><abbr title="App\Entity\Game::setEditor">setEditor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#283"><abbr title="App\Entity\Game::getConfiguration">getConfiguration</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#288"><abbr title="App\Entity\Game::setConfiguration">setConfiguration</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Game.php.html#294"><abbr title="App\Entity\Game::isInStock">isInStock</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Platform.php.html#33"><abbr title="App\Entity\Platform::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Platform.php.html#38"><abbr title="App\Entity\Platform::getPlatformName">getPlatformName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Platform.php.html#53"><abbr title="App\Entity\Platform::getGames">getGames</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Platform.php.html#58"><abbr title="App\Entity\Platform::addGame">addGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Platform.php.html#68"><abbr title="App\Entity\Platform::removeGame">removeGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/PurchaseDetail.php.html#38"><abbr title="App\Entity\PurchaseDetail::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/PurchaseDetail.php.html#43"><abbr title="App\Entity\PurchaseDetail::getQuantity">getQuantity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/PurchaseDetail.php.html#48"><abbr title="App\Entity\PurchaseDetail::setQuantity">setQuantity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/PurchaseDetail.php.html#55"><abbr title="App\Entity\PurchaseDetail::getUnitPrice">getUnitPrice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/PurchaseDetail.php.html#60"><abbr title="App\Entity\PurchaseDetail::setUnitPrice">setUnitPrice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/PurchaseDetail.php.html#67"><abbr title="App\Entity\PurchaseDetail::getPurchase">getPurchase</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/PurchaseDetail.php.html#72"><abbr title="App\Entity\PurchaseDetail::setPurchase">setPurchase</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/PurchaseDetail.php.html#79"><abbr title="App\Entity\PurchaseDetail::getGame">getGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/PurchaseDetail.php.html#84"><abbr title="App\Entity\PurchaseDetail::setGame">setGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/PurchaseDetail.php.html#91"><abbr title="App\Entity\PurchaseDetail::getActivationCode">getActivationCode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/PurchaseDetail.php.html#96"><abbr title="App\Entity\PurchaseDetail::setActivationCode">setActivationCode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Purchasing.php.html#34"><abbr title="App\Entity\Purchasing::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Purchasing.php.html#39"><abbr title="App\Entity\Purchasing::getPurchaseDate">getPurchaseDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Purchasing.php.html#44"><abbr title="App\Entity\Purchasing::setPurchaseDate">setPurchaseDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Purchasing.php.html#51"><abbr title="App\Entity\Purchasing::getTotalAmount">getTotalAmount</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Purchasing.php.html#56"><abbr title="App\Entity\Purchasing::setTotalAmount">setTotalAmount</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Purchasing.php.html#63"><abbr title="App\Entity\Purchasing::getStatus">getStatus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Purchasing.php.html#68"><abbr title="App\Entity\Purchasing::setStatus">setStatus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Purchasing.php.html#75"><abbr title="App\Entity\Purchasing::getUser">getUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Purchasing.php.html#80"><abbr title="App\Entity\Purchasing::setUser">setUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Review.php.html#33"><abbr title="App\Entity\Review::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Review.php.html#38"><abbr title="App\Entity\Review::getNote">getNote</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Review.php.html#43"><abbr title="App\Entity\Review::setNote">setNote</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Review.php.html#50"><abbr title="App\Entity\Review::getComment">getComment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Review.php.html#55"><abbr title="App\Entity\Review::setComment">setComment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Review.php.html#62"><abbr title="App\Entity\Review::getSubmitAt">getSubmitAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Review.php.html#67"><abbr title="App\Entity\Review::setSubmitAt">setSubmitAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Review.php.html#74"><abbr title="App\Entity\Review::getUser">getUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Review.php.html#79"><abbr title="App\Entity\Review::setUser">setUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Review.php.html#86"><abbr title="App\Entity\Review::getGame">getGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Review.php.html#91"><abbr title="App\Entity\Review::setGame">setGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/SupportTicket.php.html#41"><abbr title="App\Entity\SupportTicket::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/SupportTicket.php.html#46"><abbr title="App\Entity\SupportTicket::getUser">getUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/SupportTicket.php.html#51"><abbr title="App\Entity\SupportTicket::setUser">setUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/SupportTicket.php.html#58"><abbr title="App\Entity\SupportTicket::getSubject">getSubject</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/SupportTicket.php.html#63"><abbr title="App\Entity\SupportTicket::setSubject">setSubject</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/SupportTicket.php.html#70"><abbr title="App\Entity\SupportTicket::getMessage">getMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/SupportTicket.php.html#75"><abbr title="App\Entity\SupportTicket::setMessage">setMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/SupportTicket.php.html#82"><abbr title="App\Entity\SupportTicket::getPurchaseDetail">getPurchaseDetail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/SupportTicket.php.html#87"><abbr title="App\Entity\SupportTicket::setPurchaseDetail">setPurchaseDetail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/SupportTicket.php.html#92"><abbr title="App\Entity\SupportTicket::getFile">getFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/SupportTicket.php.html#97"><abbr title="App\Entity\SupportTicket::setFile">setFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/SupportTicket.php.html#104"><abbr title="App\Entity\SupportTicket::getCloseDate">getCloseDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/SupportTicket.php.html#109"><abbr title="App\Entity\SupportTicket::setCloseDate">setCloseDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/SupportTicket.php.html#116"><abbr title="App\Entity\SupportTicket::getStatus">getStatus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/SupportTicket.php.html#121"><abbr title="App\Entity\SupportTicket::setStatus">setStatus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#92"><abbr title="App\Entity\User::getUserIdentifier">getUserIdentifier</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#100"><abbr title="App\Entity\User::getRoles">getRoles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#134"><abbr title="App\Entity\User::eraseCredentials">eraseCredentials</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#140"><abbr title="App\Entity\User::getLastname">getLastname</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#152"><abbr title="App\Entity\User::getFirstname">getFirstname</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#169"><abbr title="App\Entity\User::setStripeId">setStripeId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#176"><abbr title="App\Entity\User::getRegistrationDate">getRegistrationDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#188"><abbr title="App\Entity\User::getLastConnection">getLastConnection</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#203"><abbr title="App\Entity\User::getSupportTickets">getSupportTickets</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#208"><abbr title="App\Entity\User::addSupportTicket">addSupportTicket</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#218"><abbr title="App\Entity\User::removeSupportTicket">removeSupportTicket</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#233"><abbr title="App\Entity\User::getPurchasings">getPurchasings</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#238"><abbr title="App\Entity\User::addPurchasing">addPurchasing</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#248"><abbr title="App\Entity\User::removePurchasing">removePurchasing</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#263"><abbr title="App\Entity\User::getReviews">getReviews</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#268"><abbr title="App\Entity\User::addReview">addReview</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#278"><abbr title="App\Entity\User::removeReview">removeReview</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#290"><abbr title="App\Entity\User::getUserInformation">getUserInformation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#295"><abbr title="App\Entity\User::setUserInformation">setUserInformation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#302"><abbr title="App\Entity\User::addUserInformation">addUserInformation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#312"><abbr title="App\Entity\User::removeUserInformation">removeUserInformation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/UserInformation.php.html#34"><abbr title="App\Entity\UserInformation::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/UserInformation.php.html#40"><abbr title="App\Entity\UserInformation::getAdress">getAdress</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/UserInformation.php.html#52"><abbr title="App\Entity\UserInformation::getCity">getCity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/UserInformation.php.html#64"><abbr title="App\Entity\UserInformation::getDepartment">getDepartment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/UserInformation.php.html#76"><abbr title="App\Entity\UserInformation::getUser">getUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ActivationCodeRepository.php.html#19"><abbr title="App\Repository\ActivationCodeRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/CategoryRepository.php.html#19"><abbr title="App\Repository\CategoryRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ConfigurationRepository.php.html#19"><abbr title="App\Repository\ConfigurationRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/DiscountCodeRepository.php.html#19"><abbr title="App\Repository\DiscountCodeRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/GameRepository.php.html#19"><abbr title="App\Repository\GameRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/PurchaseDetailRepository.php.html#19"><abbr title="App\Repository\PurchaseDetailRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/PurchaseDetailRepository.php.html#24"><abbr title="App\Repository\PurchaseDetailRepository::findByPurchaseId">findByPurchaseId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/PurchasingRepository.php.html#19"><abbr title="App\Repository\PurchasingRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ReviewRepository.php.html#19"><abbr title="App\Repository\ReviewRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/SupportTicketRepository.php.html#19"><abbr title="App\Repository\SupportTicketRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserInformationRepository.php.html#19"><abbr title="App\Repository\UserInformationRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#32"><abbr title="App\Repository\UserRepository::upgradePassword">upgradePassword</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Controller/PaymentController.php.html#75"><abbr title="App\Controller\PaymentController::handlePaymentSuccess">handlePaymentSuccess</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Controller/PaymentController.php.html#36"><abbr title="App\Controller\PaymentController::createPaymentIntent">createPaymentIntent</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="DataFixtures/GameFixtures.php.html#49"><abbr title="App\DataFixtures\GameFixtures::load">load</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Controller/SecurityController.php.html#86"><abbr title="App\Controller\SecurityController::changePassword">changePassword</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#181"><abbr title="App\Entity\Configuration::removeGame">removeGame</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Entity/Developers.php.html#68"><abbr title="App\Entity\Developers::removeGame">removeGame</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Entity/Editor.php.html#68"><abbr title="App\Entity\Editor::removeGame">removeGame</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Entity/Game.php.html#205"><abbr title="App\Entity\Game::removeReview">removeReview</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Entity/Game.php.html#235"><abbr title="App\Entity\Game::removeActivationCode">removeActivationCode</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Entity/Game.php.html#294"><abbr title="App\Entity\Game::isInStock">isInStock</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Entity/User.php.html#218"><abbr title="App\Entity\User::removeSupportTicket">removeSupportTicket</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Entity/User.php.html#248"><abbr title="App\Entity\User::removePurchasing">removePurchasing</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Entity/User.php.html#278"><abbr title="App\Entity\User::removeReview">removeReview</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Entity/User.php.html#312"><abbr title="App\Entity\User::removeUserInformation">removeUserInformation</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/PaymentController.php.html#114"><abbr title="App\Controller\PaymentController::createStripeCustomer">createStripeCustomer</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="DataFixtures/GameFixtures.php.html#97"><abbr title="App\DataFixtures\GameFixtures::generatectivationCode">generatectivationCode</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/Category.php.html#58"><abbr title="App\Entity\Category::addGame">addGame</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/Category.php.html#68"><abbr title="App\Entity\Category::removeGame">removeGame</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/Configuration.php.html#171"><abbr title="App\Entity\Configuration::addGame">addGame</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/Developers.php.html#58"><abbr title="App\Entity\Developers::addGame">addGame</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/Editor.php.html#58"><abbr title="App\Entity\Editor::addGame">addGame</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/Game.php.html#147"><abbr title="App\Entity\Game::addCategory">addCategory</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/Game.php.html#171"><abbr title="App\Entity\Game::addPlatform">addPlatform</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/Game.php.html#195"><abbr title="App\Entity\Game::addReview">addReview</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/Game.php.html#225"><abbr title="App\Entity\Game::addActivationCode">addActivationCode</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/Platform.php.html#58"><abbr title="App\Entity\Platform::addGame">addGame</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/Platform.php.html#68"><abbr title="App\Entity\Platform::removeGame">removeGame</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/User.php.html#208"><abbr title="App\Entity\User::addSupportTicket">addSupportTicket</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/User.php.html#238"><abbr title="App\Entity\User::addPurchasing">addPurchasing</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/User.php.html#268"><abbr title="App\Entity\User::addReview">addReview</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Entity/User.php.html#302"><abbr title="App\Entity\User::addUserInformation">addUserInformation</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#32"><abbr title="App\Repository\UserRepository::upgradePassword">upgradePassword</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 10.1.14</a> using <a href="https://www.php.net/" target="_top">PHP 8.1.13</a> and <a href="https://phpunit.de/">PHPUnit 10.5.20</a> at Tue May 28 13:11:01 CEST 2024.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="_js/jquery.min.js?v=10.1.14" type="text/javascript"></script>
+  <script src="_js/d3.min.js?v=10.1.14" type="text/javascript"></script>
+  <script src="_js/nv.d3.min.js?v=10.1.14" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([21,0,1,3,1,0,0,1,1,0,0,8], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([191,0,0,0,0,0,0,0,0,0,1,33], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,12,"<a href=\"Controller\/PaymentController.php.html#21\">App\\Controller\\PaymentController<\/a>"],[78,10,"<a href=\"Controller\/SecurityController.php.html#17\">App\\Controller\\SecurityController<\/a>"],[100,2,"<a href=\"DataFixtures\/DeveloperFixtures.php.html#9\">App\\DataFixtures\\DeveloperFixtures<\/a>"],[100,2,"<a href=\"DataFixtures\/EditorFixtures.php.html#9\">App\\DataFixtures\\EditorFixtures<\/a>"],[0,8,"<a href=\"DataFixtures\/GameFixtures.php.html#24\">App\\DataFixtures\\GameFixtures<\/a>"],[100,2,"<a href=\"DataFixtures\/PlatformFixtures.php.html#9\">App\\DataFixtures\\PlatformFixtures<\/a>"],[100,3,"<a href=\"DataFixtures\/UserFixtures.php.html#11\">App\\DataFixtures\\UserFixtures<\/a>"],[0,13,"<a href=\"Entity\/ActivationCode.php.html#10\">App\\Entity\\ActivationCode<\/a>"],[0,9,"<a href=\"Entity\/Category.php.html#12\">App\\Entity\\Category<\/a>"],[0,24,"<a href=\"Entity\/Configuration.php.html#13\">App\\Entity\\Configuration<\/a>"],[21.428571428571427,10,"<a href=\"Entity\/Developers.php.html#12\">App\\Entity\\Developers<\/a>"],[0,11,"<a href=\"Entity\/DiscountCode.php.html#10\">App\\Entity\\DiscountCode<\/a>"],[21.428571428571427,10,"<a href=\"Entity\/Editor.php.html#12\">App\\Entity\\Editor<\/a>"],[0,41,"<a href=\"Entity\/Game.php.html#17\">App\\Entity\\Game<\/a>"],[23.076923076923077,9,"<a href=\"Entity\/Platform.php.html#12\">App\\Entity\\Platform<\/a>"],[0,11,"<a href=\"Entity\/PurchaseDetail.php.html#11\">App\\Entity\\PurchaseDetail<\/a>"],[0,9,"<a href=\"Entity\/Purchasing.php.html#12\">App\\Entity\\Purchasing<\/a>"],[0,11,"<a href=\"Entity\/Review.php.html#9\">App\\Entity\\Review<\/a>"],[0,15,"<a href=\"Entity\/SupportTicket.php.html#10\">App\\Entity\\SupportTicket<\/a>"],[30.985915492957744,45,"<a href=\"Entity\/User.php.html#14\">App\\Entity\\User<\/a>"],[61.53846153846154,9,"<a href=\"Entity\/UserInformation.php.html#12\">App\\Entity\\UserInformation<\/a>"],[100,0,"<a href=\"Kernel.php.html#8\">App\\Kernel<\/a>"],[0,1,"<a href=\"Repository\/ActivationCodeRepository.php.html#17\">App\\Repository\\ActivationCodeRepository<\/a>"],[0,1,"<a href=\"Repository\/CategoryRepository.php.html#17\">App\\Repository\\CategoryRepository<\/a>"],[0,1,"<a href=\"Repository\/ConfigurationRepository.php.html#17\">App\\Repository\\ConfigurationRepository<\/a>"],[100,1,"<a href=\"Repository\/DevelopersRepository.php.html#17\">App\\Repository\\DevelopersRepository<\/a>"],[0,1,"<a href=\"Repository\/DiscountCodeRepository.php.html#17\">App\\Repository\\DiscountCodeRepository<\/a>"],[100,1,"<a href=\"Repository\/EditorRepository.php.html#17\">App\\Repository\\EditorRepository<\/a>"],[0,1,"<a href=\"Repository\/GameRepository.php.html#17\">App\\Repository\\GameRepository<\/a>"],[100,1,"<a href=\"Repository\/PlatformRepository.php.html#17\">App\\Repository\\PlatformRepository<\/a>"],[0,2,"<a href=\"Repository\/PurchaseDetailRepository.php.html#17\">App\\Repository\\PurchaseDetailRepository<\/a>"],[0,1,"<a href=\"Repository\/PurchasingRepository.php.html#17\">App\\Repository\\PurchasingRepository<\/a>"],[0,1,"<a href=\"Repository\/ReviewRepository.php.html#17\">App\\Repository\\ReviewRepository<\/a>"],[0,1,"<a href=\"Repository\/SupportTicketRepository.php.html#17\">App\\Repository\\SupportTicketRepository<\/a>"],[0,1,"<a href=\"Repository\/UserInformationRepository.php.html#17\">App\\Repository\\UserInformationRepository<\/a>"],[16.666666666666664,3,"<a href=\"Repository\/UserRepository.php.html#22\">App\\Repository\\UserRepository<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"Controller\/PaymentController.php.html#27\">App\\Controller\\PaymentController::__construct<\/a>"],[0,4,"<a href=\"Controller\/PaymentController.php.html#36\">App\\Controller\\PaymentController::createPaymentIntent<\/a>"],[0,5,"<a href=\"Controller\/PaymentController.php.html#75\">App\\Controller\\PaymentController::handlePaymentSuccess<\/a>"],[0,2,"<a href=\"Controller\/PaymentController.php.html#114\">App\\Controller\\PaymentController::createStripeCustomer<\/a>"],[100,1,"<a href=\"Controller\/SecurityController.php.html#25\">App\\Controller\\SecurityController::__construct<\/a>"],[100,3,"<a href=\"Controller\/SecurityController.php.html#33\">App\\Controller\\SecurityController::login<\/a>"],[95.45454545454545,3,"<a href=\"Controller\/SecurityController.php.html#55\">App\\Controller\\SecurityController::register<\/a>"],[0,3,"<a href=\"Controller\/SecurityController.php.html#86\">App\\Controller\\SecurityController::changePassword<\/a>"],[100,2,"<a href=\"DataFixtures\/DeveloperFixtures.php.html#11\">App\\DataFixtures\\DeveloperFixtures::load<\/a>"],[100,2,"<a href=\"DataFixtures\/EditorFixtures.php.html#11\">App\\DataFixtures\\EditorFixtures::load<\/a>"],[0,1,"<a href=\"DataFixtures\/GameFixtures.php.html#32\">App\\DataFixtures\\GameFixtures::__construct<\/a>"],[0,1,"<a href=\"DataFixtures\/GameFixtures.php.html#40\">App\\DataFixtures\\GameFixtures::getDependencies<\/a>"],[0,4,"<a href=\"DataFixtures\/GameFixtures.php.html#49\">App\\DataFixtures\\GameFixtures::load<\/a>"],[0,2,"<a href=\"DataFixtures\/GameFixtures.php.html#97\">App\\DataFixtures\\GameFixtures::generatectivationCode<\/a>"],[100,2,"<a href=\"DataFixtures\/PlatformFixtures.php.html#11\">App\\DataFixtures\\PlatformFixtures::load<\/a>"],[100,1,"<a href=\"DataFixtures\/UserFixtures.php.html#14\">App\\DataFixtures\\UserFixtures::__construct<\/a>"],[100,2,"<a href=\"DataFixtures\/UserFixtures.php.html#19\">App\\DataFixtures\\UserFixtures::load<\/a>"],[0,1,"<a href=\"Entity\/ActivationCode.php.html#37\">App\\Entity\\ActivationCode::getId<\/a>"],[0,1,"<a href=\"Entity\/ActivationCode.php.html#42\">App\\Entity\\ActivationCode::getName<\/a>"],[0,1,"<a href=\"Entity\/ActivationCode.php.html#47\">App\\Entity\\ActivationCode::setName<\/a>"],[0,1,"<a href=\"Entity\/ActivationCode.php.html#54\">App\\Entity\\ActivationCode::getCode<\/a>"],[0,1,"<a href=\"Entity\/ActivationCode.php.html#59\">App\\Entity\\ActivationCode::setCode<\/a>"],[0,1,"<a href=\"Entity\/ActivationCode.php.html#66\">App\\Entity\\ActivationCode::getDistributionDate<\/a>"],[0,1,"<a href=\"Entity\/ActivationCode.php.html#71\">App\\Entity\\ActivationCode::setDistributionDate<\/a>"],[0,1,"<a href=\"Entity\/ActivationCode.php.html#78\">App\\Entity\\ActivationCode::getDuration<\/a>"],[0,1,"<a href=\"Entity\/ActivationCode.php.html#83\">App\\Entity\\ActivationCode::setDuration<\/a>"],[0,1,"<a href=\"Entity\/ActivationCode.php.html#90\">App\\Entity\\ActivationCode::getGame<\/a>"],[0,1,"<a href=\"Entity\/ActivationCode.php.html#95\">App\\Entity\\ActivationCode::setGame<\/a>"],[0,1,"<a href=\"Entity\/ActivationCode.php.html#102\">App\\Entity\\ActivationCode::isAvailable<\/a>"],[0,1,"<a href=\"Entity\/ActivationCode.php.html#107\">App\\Entity\\ActivationCode::setIsAvailable<\/a>"],[0,1,"<a href=\"Entity\/Category.php.html#28\">App\\Entity\\Category::__construct<\/a>"],[0,1,"<a href=\"Entity\/Category.php.html#33\">App\\Entity\\Category::getId<\/a>"],[0,1,"<a href=\"Entity\/Category.php.html#38\">App\\Entity\\Category::getLabel<\/a>"],[0,1,"<a href=\"Entity\/Category.php.html#43\">App\\Entity\\Category::setLabel<\/a>"],[0,1,"<a href=\"Entity\/Category.php.html#53\">App\\Entity\\Category::getGames<\/a>"],[0,2,"<a href=\"Entity\/Category.php.html#58\">App\\Entity\\Category::addGame<\/a>"],[0,2,"<a href=\"Entity\/Category.php.html#68\">App\\Entity\\Category::removeGame<\/a>"],[0,1,"<a href=\"Entity\/Configuration.php.html#57\">App\\Entity\\Configuration::__construct<\/a>"],[0,1,"<a href=\"Entity\/Configuration.php.html#62\">App\\Entity\\Configuration::getId<\/a>"],[0,1,"<a href=\"Entity\/Configuration.php.html#67\">App\\Entity\\Configuration::getOperatingSystem<\/a>"],[0,1,"<a href=\"Entity\/Configuration.php.html#72\">App\\Entity\\Configuration::setOperatingSystem<\/a>"],[0,1,"<a href=\"Entity\/Configuration.php.html#79\">App\\Entity\\Configuration::getProcessor<\/a>"],[0,1,"<a href=\"Entity\/Configuration.php.html#84\">App\\Entity\\Configuration::setProcessor<\/a>"],[0,1,"<a href=\"Entity\/Configuration.php.html#91\">App\\Entity\\Configuration::getGraphicsCard<\/a>"],[0,1,"<a href=\"Entity\/Configuration.php.html#96\">App\\Entity\\Configuration::setGraphicsCard<\/a>"],[0,1,"<a href=\"Entity\/Configuration.php.html#103\">App\\Entity\\Configuration::getRamMemory<\/a>"],[0,1,"<a href=\"Entity\/Configuration.php.html#108\">App\\Entity\\Configuration::setRamMemory<\/a>"],[0,1,"<a href=\"Entity\/Configuration.php.html#115\">App\\Entity\\Configuration::getStorage<\/a>"],[0,1,"<a href=\"Entity\/Configuration.php.html#120\">App\\Entity\\Configuration::setStorage<\/a>"],[0,1,"<a href=\"Entity\/Configuration.php.html#127\">App\\Entity\\Configuration::getDirectX<\/a>"],[0,1,"<a href=\"Entity\/Configuration.php.html#132\">App\\Entity\\Configuration::setDirectX<\/a>"],[0,1,"<a href=\"Entity\/Configuration.php.html#139\">App\\Entity\\Configuration::getAdditionalNotes<\/a>"],[0,1,"<a href=\"Entity\/Configuration.php.html#144\">App\\Entity\\Configuration::setAdditionalNotes<\/a>"],[0,1,"<a href=\"Entity\/Configuration.php.html#151\">App\\Entity\\Configuration::getDisplay<\/a>"],[0,1,"<a href=\"Entity\/Configuration.php.html#156\">App\\Entity\\Configuration::setDisplay<\/a>"],[0,1,"<a href=\"Entity\/Configuration.php.html#166\">App\\Entity\\Configuration::getGames<\/a>"],[0,2,"<a href=\"Entity\/Configuration.php.html#171\">App\\Entity\\Configuration::addGame<\/a>"],[0,3,"<a href=\"Entity\/Configuration.php.html#181\">App\\Entity\\Configuration::removeGame<\/a>"],[100,1,"<a href=\"Entity\/Developers.php.html#28\">App\\Entity\\Developers::__construct<\/a>"],[0,1,"<a href=\"Entity\/Developers.php.html#33\">App\\Entity\\Developers::getId<\/a>"],[0,1,"<a href=\"Entity\/Developers.php.html#38\">App\\Entity\\Developers::getName<\/a>"],[100,1,"<a href=\"Entity\/Developers.php.html#43\">App\\Entity\\Developers::setName<\/a>"],[0,1,"<a href=\"Entity\/Developers.php.html#53\">App\\Entity\\Developers::getGames<\/a>"],[0,2,"<a href=\"Entity\/Developers.php.html#58\">App\\Entity\\Developers::addGame<\/a>"],[0,3,"<a href=\"Entity\/Developers.php.html#68\">App\\Entity\\Developers::removeGame<\/a>"],[0,1,"<a href=\"Entity\/DiscountCode.php.html#34\">App\\Entity\\DiscountCode::getId<\/a>"],[0,1,"<a href=\"Entity\/DiscountCode.php.html#39\">App\\Entity\\DiscountCode::getName<\/a>"],[0,1,"<a href=\"Entity\/DiscountCode.php.html#44\">App\\Entity\\DiscountCode::setName<\/a>"],[0,1,"<a href=\"Entity\/DiscountCode.php.html#51\">App\\Entity\\DiscountCode::getCode<\/a>"],[0,1,"<a href=\"Entity\/DiscountCode.php.html#56\">App\\Entity\\DiscountCode::setCode<\/a>"],[0,1,"<a href=\"Entity\/DiscountCode.php.html#63\">App\\Entity\\DiscountCode::getReduction<\/a>"],[0,1,"<a href=\"Entity\/DiscountCode.php.html#68\">App\\Entity\\DiscountCode::setReduction<\/a>"],[0,1,"<a href=\"Entity\/DiscountCode.php.html#75\">App\\Entity\\DiscountCode::getStartDate<\/a>"],[0,1,"<a href=\"Entity\/DiscountCode.php.html#80\">App\\Entity\\DiscountCode::setStartDate<\/a>"],[0,1,"<a href=\"Entity\/DiscountCode.php.html#87\">App\\Entity\\DiscountCode::getEndDate<\/a>"],[0,1,"<a href=\"Entity\/DiscountCode.php.html#92\">App\\Entity\\DiscountCode::setEndDate<\/a>"],[100,1,"<a href=\"Entity\/Editor.php.html#28\">App\\Entity\\Editor::__construct<\/a>"],[0,1,"<a href=\"Entity\/Editor.php.html#33\">App\\Entity\\Editor::getId<\/a>"],[0,1,"<a href=\"Entity\/Editor.php.html#38\">App\\Entity\\Editor::getName<\/a>"],[100,1,"<a href=\"Entity\/Editor.php.html#43\">App\\Entity\\Editor::setName<\/a>"],[0,1,"<a href=\"Entity\/Editor.php.html#53\">App\\Entity\\Editor::getGames<\/a>"],[0,2,"<a href=\"Entity\/Editor.php.html#58\">App\\Entity\\Editor::addGame<\/a>"],[0,3,"<a href=\"Entity\/Editor.php.html#68\">App\\Entity\\Editor::removeGame<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#78\">App\\Entity\\Game::__construct<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#86\">App\\Entity\\Game::getId<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#91\">App\\Entity\\Game::getTitle<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#96\">App\\Entity\\Game::setTitle<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#103\">App\\Entity\\Game::getDescription<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#108\">App\\Entity\\Game::setDescription<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#115\">App\\Entity\\Game::getPrice<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#120\">App\\Entity\\Game::setPrice<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#127\">App\\Entity\\Game::getExitDate<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#132\">App\\Entity\\Game::setExitDate<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#142\">App\\Entity\\Game::getCategory<\/a>"],[0,2,"<a href=\"Entity\/Game.php.html#147\">App\\Entity\\Game::addCategory<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#156\">App\\Entity\\Game::removeCategory<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#166\">App\\Entity\\Game::getPlatform<\/a>"],[0,2,"<a href=\"Entity\/Game.php.html#171\">App\\Entity\\Game::addPlatform<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#180\">App\\Entity\\Game::removePlatform<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#190\">App\\Entity\\Game::getReviews<\/a>"],[0,2,"<a href=\"Entity\/Game.php.html#195\">App\\Entity\\Game::addReview<\/a>"],[0,3,"<a href=\"Entity\/Game.php.html#205\">App\\Entity\\Game::removeReview<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#220\">App\\Entity\\Game::getActivationCodes<\/a>"],[0,2,"<a href=\"Entity\/Game.php.html#225\">App\\Entity\\Game::addActivationCode<\/a>"],[0,3,"<a href=\"Entity\/Game.php.html#235\">App\\Entity\\Game::removeActivationCode<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#247\">App\\Entity\\Game::getImage<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#252\">App\\Entity\\Game::setImage<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#259\">App\\Entity\\Game::getDeveloper<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#264\">App\\Entity\\Game::setDeveloper<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#271\">App\\Entity\\Game::getEditor<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#276\">App\\Entity\\Game::setEditor<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#283\">App\\Entity\\Game::getConfiguration<\/a>"],[0,1,"<a href=\"Entity\/Game.php.html#288\">App\\Entity\\Game::setConfiguration<\/a>"],[0,3,"<a href=\"Entity\/Game.php.html#294\">App\\Entity\\Game::isInStock<\/a>"],[100,1,"<a href=\"Entity\/Platform.php.html#28\">App\\Entity\\Platform::__construct<\/a>"],[0,1,"<a href=\"Entity\/Platform.php.html#33\">App\\Entity\\Platform::getId<\/a>"],[0,1,"<a href=\"Entity\/Platform.php.html#38\">App\\Entity\\Platform::getPlatformName<\/a>"],[100,1,"<a href=\"Entity\/Platform.php.html#43\">App\\Entity\\Platform::setPlatformName<\/a>"],[0,1,"<a href=\"Entity\/Platform.php.html#53\">App\\Entity\\Platform::getGames<\/a>"],[0,2,"<a href=\"Entity\/Platform.php.html#58\">App\\Entity\\Platform::addGame<\/a>"],[0,2,"<a href=\"Entity\/Platform.php.html#68\">App\\Entity\\Platform::removeGame<\/a>"],[0,1,"<a href=\"Entity\/PurchaseDetail.php.html#38\">App\\Entity\\PurchaseDetail::getId<\/a>"],[0,1,"<a href=\"Entity\/PurchaseDetail.php.html#43\">App\\Entity\\PurchaseDetail::getQuantity<\/a>"],[0,1,"<a href=\"Entity\/PurchaseDetail.php.html#48\">App\\Entity\\PurchaseDetail::setQuantity<\/a>"],[0,1,"<a href=\"Entity\/PurchaseDetail.php.html#55\">App\\Entity\\PurchaseDetail::getUnitPrice<\/a>"],[0,1,"<a href=\"Entity\/PurchaseDetail.php.html#60\">App\\Entity\\PurchaseDetail::setUnitPrice<\/a>"],[0,1,"<a href=\"Entity\/PurchaseDetail.php.html#67\">App\\Entity\\PurchaseDetail::getPurchase<\/a>"],[0,1,"<a href=\"Entity\/PurchaseDetail.php.html#72\">App\\Entity\\PurchaseDetail::setPurchase<\/a>"],[0,1,"<a href=\"Entity\/PurchaseDetail.php.html#79\">App\\Entity\\PurchaseDetail::getGame<\/a>"],[0,1,"<a href=\"Entity\/PurchaseDetail.php.html#84\">App\\Entity\\PurchaseDetail::setGame<\/a>"],[0,1,"<a href=\"Entity\/PurchaseDetail.php.html#91\">App\\Entity\\PurchaseDetail::getActivationCode<\/a>"],[0,1,"<a href=\"Entity\/PurchaseDetail.php.html#96\">App\\Entity\\PurchaseDetail::setActivationCode<\/a>"],[0,1,"<a href=\"Entity\/Purchasing.php.html#34\">App\\Entity\\Purchasing::getId<\/a>"],[0,1,"<a href=\"Entity\/Purchasing.php.html#39\">App\\Entity\\Purchasing::getPurchaseDate<\/a>"],[0,1,"<a href=\"Entity\/Purchasing.php.html#44\">App\\Entity\\Purchasing::setPurchaseDate<\/a>"],[0,1,"<a href=\"Entity\/Purchasing.php.html#51\">App\\Entity\\Purchasing::getTotalAmount<\/a>"],[0,1,"<a href=\"Entity\/Purchasing.php.html#56\">App\\Entity\\Purchasing::setTotalAmount<\/a>"],[0,1,"<a href=\"Entity\/Purchasing.php.html#63\">App\\Entity\\Purchasing::getStatus<\/a>"],[0,1,"<a href=\"Entity\/Purchasing.php.html#68\">App\\Entity\\Purchasing::setStatus<\/a>"],[0,1,"<a href=\"Entity\/Purchasing.php.html#75\">App\\Entity\\Purchasing::getUser<\/a>"],[0,1,"<a href=\"Entity\/Purchasing.php.html#80\">App\\Entity\\Purchasing::setUser<\/a>"],[0,1,"<a href=\"Entity\/Review.php.html#33\">App\\Entity\\Review::getId<\/a>"],[0,1,"<a href=\"Entity\/Review.php.html#38\">App\\Entity\\Review::getNote<\/a>"],[0,1,"<a href=\"Entity\/Review.php.html#43\">App\\Entity\\Review::setNote<\/a>"],[0,1,"<a href=\"Entity\/Review.php.html#50\">App\\Entity\\Review::getComment<\/a>"],[0,1,"<a href=\"Entity\/Review.php.html#55\">App\\Entity\\Review::setComment<\/a>"],[0,1,"<a href=\"Entity\/Review.php.html#62\">App\\Entity\\Review::getSubmitAt<\/a>"],[0,1,"<a href=\"Entity\/Review.php.html#67\">App\\Entity\\Review::setSubmitAt<\/a>"],[0,1,"<a href=\"Entity\/Review.php.html#74\">App\\Entity\\Review::getUser<\/a>"],[0,1,"<a href=\"Entity\/Review.php.html#79\">App\\Entity\\Review::setUser<\/a>"],[0,1,"<a href=\"Entity\/Review.php.html#86\">App\\Entity\\Review::getGame<\/a>"],[0,1,"<a href=\"Entity\/Review.php.html#91\">App\\Entity\\Review::setGame<\/a>"],[0,1,"<a href=\"Entity\/SupportTicket.php.html#41\">App\\Entity\\SupportTicket::getId<\/a>"],[0,1,"<a href=\"Entity\/SupportTicket.php.html#46\">App\\Entity\\SupportTicket::getUser<\/a>"],[0,1,"<a href=\"Entity\/SupportTicket.php.html#51\">App\\Entity\\SupportTicket::setUser<\/a>"],[0,1,"<a href=\"Entity\/SupportTicket.php.html#58\">App\\Entity\\SupportTicket::getSubject<\/a>"],[0,1,"<a href=\"Entity\/SupportTicket.php.html#63\">App\\Entity\\SupportTicket::setSubject<\/a>"],[0,1,"<a href=\"Entity\/SupportTicket.php.html#70\">App\\Entity\\SupportTicket::getMessage<\/a>"],[0,1,"<a href=\"Entity\/SupportTicket.php.html#75\">App\\Entity\\SupportTicket::setMessage<\/a>"],[0,1,"<a href=\"Entity\/SupportTicket.php.html#82\">App\\Entity\\SupportTicket::getPurchaseDetail<\/a>"],[0,1,"<a href=\"Entity\/SupportTicket.php.html#87\">App\\Entity\\SupportTicket::setPurchaseDetail<\/a>"],[0,1,"<a href=\"Entity\/SupportTicket.php.html#92\">App\\Entity\\SupportTicket::getFile<\/a>"],[0,1,"<a href=\"Entity\/SupportTicket.php.html#97\">App\\Entity\\SupportTicket::setFile<\/a>"],[0,1,"<a href=\"Entity\/SupportTicket.php.html#104\">App\\Entity\\SupportTicket::getCloseDate<\/a>"],[0,1,"<a href=\"Entity\/SupportTicket.php.html#109\">App\\Entity\\SupportTicket::setCloseDate<\/a>"],[0,1,"<a href=\"Entity\/SupportTicket.php.html#116\">App\\Entity\\SupportTicket::getStatus<\/a>"],[0,1,"<a href=\"Entity\/SupportTicket.php.html#121\">App\\Entity\\SupportTicket::setStatus<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#62\">App\\Entity\\User::__construct<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#70\">App\\Entity\\User::getId<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#75\">App\\Entity\\User::getEmail<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#80\">App\\Entity\\User::setEmail<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#92\">App\\Entity\\User::getUserIdentifier<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#100\">App\\Entity\\User::getRoles<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#109\">App\\Entity\\User::setRoles<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#119\">App\\Entity\\User::getPassword<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#124\">App\\Entity\\User::setPassword<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#134\">App\\Entity\\User::eraseCredentials<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#140\">App\\Entity\\User::getLastname<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#145\">App\\Entity\\User::setLastname<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#152\">App\\Entity\\User::getFirstname<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#157\">App\\Entity\\User::setFirstname<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#164\">App\\Entity\\User::getStripeId<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#169\">App\\Entity\\User::setStripeId<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#176\">App\\Entity\\User::getRegistrationDate<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#181\">App\\Entity\\User::setRegistrationDate<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#188\">App\\Entity\\User::getLastConnection<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#193\">App\\Entity\\User::setLastConnection<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#203\">App\\Entity\\User::getSupportTickets<\/a>"],[0,2,"<a href=\"Entity\/User.php.html#208\">App\\Entity\\User::addSupportTicket<\/a>"],[0,3,"<a href=\"Entity\/User.php.html#218\">App\\Entity\\User::removeSupportTicket<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#233\">App\\Entity\\User::getPurchasings<\/a>"],[0,2,"<a href=\"Entity\/User.php.html#238\">App\\Entity\\User::addPurchasing<\/a>"],[0,3,"<a href=\"Entity\/User.php.html#248\">App\\Entity\\User::removePurchasing<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#263\">App\\Entity\\User::getReviews<\/a>"],[0,2,"<a href=\"Entity\/User.php.html#268\">App\\Entity\\User::addReview<\/a>"],[0,3,"<a href=\"Entity\/User.php.html#278\">App\\Entity\\User::removeReview<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#290\">App\\Entity\\User::getUserInformation<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#295\">App\\Entity\\User::setUserInformation<\/a>"],[0,2,"<a href=\"Entity\/User.php.html#302\">App\\Entity\\User::addUserInformation<\/a>"],[0,3,"<a href=\"Entity\/User.php.html#312\">App\\Entity\\User::removeUserInformation<\/a>"],[0,1,"<a href=\"Entity\/UserInformation.php.html#34\">App\\Entity\\UserInformation::getId<\/a>"],[0,1,"<a href=\"Entity\/UserInformation.php.html#40\">App\\Entity\\UserInformation::getAdress<\/a>"],[100,1,"<a href=\"Entity\/UserInformation.php.html#45\">App\\Entity\\UserInformation::setAdress<\/a>"],[0,1,"<a href=\"Entity\/UserInformation.php.html#52\">App\\Entity\\UserInformation::getCity<\/a>"],[100,1,"<a href=\"Entity\/UserInformation.php.html#57\">App\\Entity\\UserInformation::setCity<\/a>"],[0,1,"<a href=\"Entity\/UserInformation.php.html#64\">App\\Entity\\UserInformation::getDepartment<\/a>"],[100,1,"<a href=\"Entity\/UserInformation.php.html#69\">App\\Entity\\UserInformation::setDepartment<\/a>"],[0,1,"<a href=\"Entity\/UserInformation.php.html#76\">App\\Entity\\UserInformation::getUser<\/a>"],[100,1,"<a href=\"Entity\/UserInformation.php.html#81\">App\\Entity\\UserInformation::setUser<\/a>"],[0,1,"<a href=\"Repository\/ActivationCodeRepository.php.html#19\">App\\Repository\\ActivationCodeRepository::__construct<\/a>"],[0,1,"<a href=\"Repository\/CategoryRepository.php.html#19\">App\\Repository\\CategoryRepository::__construct<\/a>"],[0,1,"<a href=\"Repository\/ConfigurationRepository.php.html#19\">App\\Repository\\ConfigurationRepository::__construct<\/a>"],[100,1,"<a href=\"Repository\/DevelopersRepository.php.html#19\">App\\Repository\\DevelopersRepository::__construct<\/a>"],[0,1,"<a href=\"Repository\/DiscountCodeRepository.php.html#19\">App\\Repository\\DiscountCodeRepository::__construct<\/a>"],[100,1,"<a href=\"Repository\/EditorRepository.php.html#19\">App\\Repository\\EditorRepository::__construct<\/a>"],[0,1,"<a href=\"Repository\/GameRepository.php.html#19\">App\\Repository\\GameRepository::__construct<\/a>"],[100,1,"<a href=\"Repository\/PlatformRepository.php.html#19\">App\\Repository\\PlatformRepository::__construct<\/a>"],[0,1,"<a href=\"Repository\/PurchaseDetailRepository.php.html#19\">App\\Repository\\PurchaseDetailRepository::__construct<\/a>"],[0,1,"<a href=\"Repository\/PurchaseDetailRepository.php.html#24\">App\\Repository\\PurchaseDetailRepository::findByPurchaseId<\/a>"],[0,1,"<a href=\"Repository\/PurchasingRepository.php.html#19\">App\\Repository\\PurchasingRepository::__construct<\/a>"],[0,1,"<a href=\"Repository\/ReviewRepository.php.html#19\">App\\Repository\\ReviewRepository::__construct<\/a>"],[0,1,"<a href=\"Repository\/SupportTicketRepository.php.html#19\">App\\Repository\\SupportTicketRepository::__construct<\/a>"],[0,1,"<a href=\"Repository\/UserInformationRepository.php.html#19\">App\\Repository\\UserInformationRepository::__construct<\/a>"],[100,1,"<a href=\"Repository\/UserRepository.php.html#24\">App\\Repository\\UserRepository::__construct<\/a>"],[0,2,"<a href=\"Repository\/UserRepository.php.html#32\">App\\Repository\\UserRepository::upgradePassword<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>
