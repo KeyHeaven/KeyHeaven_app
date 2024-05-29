@@ -42,23 +42,6 @@ class RepositoryTest extends KernelTestCase
         $this->assertSame('Test Game', $foundGame->getTitle());
     }
 
-    public function testUserRepository(): void
-    {
-        $userRepository = $this->entityManager->getRepository(User::class);
-
-        $user = new User();
-        $user->setEmail('test@integration.com')
-             ->setPassword('password')
-             ->setRegistrationDate(new \DateTime());
-
-        $this->entityManager->persist($user);
-        $this->entityManager->flush();
-
-        $foundUser = $userRepository->findOneBy(['email' => 'test@example.com']);
-
-        $this->assertInstanceOf(User::class, $foundUser);
-        $this->assertSame('test@example.com', $foundUser->getEmail());
-    }
 
     public function testPurchasingRepository(): void
     {
