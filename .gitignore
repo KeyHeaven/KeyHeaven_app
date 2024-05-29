@@ -18,3 +18,5 @@
 .phpunit.result.cache
 ###< phpunit/phpunit ###
 conposer.lock
+
+.phpunit.cache/
