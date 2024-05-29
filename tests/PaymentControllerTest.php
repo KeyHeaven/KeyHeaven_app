@@ -5,6 +5,7 @@ namespace App\Tests;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
 use App\Tests\AuthentificationTest;
+use App\Repository\GameRepository;
 
 class PaymentControllerTest extends WebTestCase
 {
@@ -28,11 +29,13 @@ class PaymentControllerTest extends WebTestCase
     
     public function testCreatePaymentIntent(): void
     {
+        $gameRepository = static::getContainer()->get(GameRepository::class);
+        $game = $gameRepository->findOneBy([]);
 
         $this->client->request('POST', '/api/create-payment-intent', [], [], [
             'HTTP_AUTHORIZATION' => 'Bearer ' . $this->token,
             'CONTENT_TYPE' => 'application/json'
-        ], json_encode(['items' => [['id' => 1], ['id' => 2]]]));
+        ], json_encode(['items' => [['id' =>   $game->getId()]]]));
 
         $this->assertResponseIsSuccessful();
         $this->assertResponseHeaderSame('content-type', 'application/json');

@@ -1,20 +1,19 @@
 <?php
 
-namespace App\Tests\DataFixtures;
+namespace App\Tests;
 
 use App\DataFixtures\DeveloperFixtures;
 use App\DataFixtures\EditorFixtures;
 use App\DataFixtures\GameFixtures;
 use App\DataFixtures\PlatformFixtures;
-use App\DataFixtures\UserFixtures;
 use App\Entity\Developers;
 use App\Entity\Editor;
 use App\Entity\Game;
 use App\Entity\Platform;
-use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use App\Entity\Configuration;
+use App\Entity\Category;
 
 class DataFixturesTest extends KernelTestCase
 {
@@ -24,31 +23,8 @@ class DataFixturesTest extends KernelTestCase
     {
         $kernel = self::bootKernel();
         $this->entityManager = $kernel->getContainer()->get('doctrine')->getManager();
-        $this->clearTables(); // Clear the tables before each test
     }
 
-    private function clearTables(): void
-    {
-        $connection = $this->entityManager->getConnection();
-        $platform = $connection->getDatabasePlatform();
-
-        // Disable foreign key checks for MySQL
-        if ($platform->getName() === 'mysql') {
-            $connection->executeQuery('SET FOREIGN_KEY_CHECKS=0');
-        }
-
-        $connection->executeStatement('DELETE FROM user_information');
-        $connection->executeStatement('DELETE FROM user');
-        $connection->executeStatement('DELETE FROM game');
-        $connection->executeStatement('DELETE FROM platform');
-        $connection->executeStatement('DELETE FROM editor');
-        $connection->executeStatement('DELETE FROM developers');
-
-        // Re-enable foreign key checks for MySQL
-        if ($platform->getName() === 'mysql') {
-            $connection->executeQuery('SET FOREIGN_KEY_CHECKS=1');
-        }
-    }
 
     public function testDeveloperFixtures(): void
     {
@@ -101,30 +77,39 @@ class DataFixturesTest extends KernelTestCase
     //     $this->assertGreaterThan(0, count($users));
     // }
 
-    // public function testGameFixtures(): void
-    // {
-    //     $developerFixture = new DeveloperFixtures();
-    //     $developerFixture->load($this->entityManager);
+    public function testGameFixtures(): void
+    {
+        $developerFixture = new DeveloperFixtures();
+        $developerFixture->load($this->entityManager);
 
-    //     $editorFixture = new EditorFixtures();
-    //     $editorFixture->load($this->entityManager);
+        $editorFixture = new EditorFixtures();
+        $editorFixture->load($this->entityManager);
 
-    //     $platformFixture = new PlatformFixtures();
-    //     $platformFixture->load($this->entityManager);
+        $platformFixture = new PlatformFixtures();
+        $platformFixture->load($this->entityManager);
 
-    //     // Create mocks or real instances for GameFixtures dependencies
-    //     $someService = $this->getMockBuilder(SomeService::class)->disableOriginalConstructor()->getMock();
-    //     $anotherService = $this->getMockBuilder(AnotherService::class)->disableOriginalConstructor()->getMock();
+        // Retrieve repositories for dependencies
+        $categoryRepository = $this->entityManager->getRepository(Category::class);
+        $platformRepository = $this->entityManager->getRepository(Platform::class);
+        $developersRepository = $this->entityManager->getRepository(Developers::class);
+        $editorRepository = $this->entityManager->getRepository(Editor::class);
+        $configurationRepository = $this->entityManager->getRepository(Configuration::class);
 
-    //     // Pass all necessary arguments to the GameFixtures constructor
-    //     $fixture = new GameFixtures($someService, $anotherService, ...);
-    //     $fixture->load($this->entityManager);
+        // Pass all necessary arguments to the GameFixtures constructor
+        $fixture = new GameFixtures(
+            $categoryRepository,
+            $platformRepository,
+            $developersRepository,
+            $editorRepository,
+            $configurationRepository
+        );
+        $fixture->load($this->entityManager);
 
-    //     $gameRepository = $this->entityManager->getRepository(Game::class);
-    //     $games = $gameRepository->findAll();
+        $gameRepository = $this->entityManager->getRepository(Game::class);
+        $games = $gameRepository->findAll();
 
-    //     $this->assertGreaterThan(0, count($games));
-    // }
+        $this->assertGreaterThan(0, count($games));
+    }
 
     protected function tearDown(): void
     {
